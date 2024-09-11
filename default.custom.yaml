@@ -1,0 +1,7 @@
+#
+# Author: Mr. Kin <im.misterkin@gmail.com>
+# Description: This file is used for RIME's global customized settings.
+#
+
+patch:
+  menu/page_size: 9 # 设置候选词个数

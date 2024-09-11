@@ -1,0 +1,107 @@
+#
+# Author: Mr. Kin <im.misterkin@gmail.com>
+# Description: This file is Rime extended dictionary - personal_words （个人常用语）
+#
+
+---
+name: personal_words
+version: "2022/10/03"
+sort: by_weight
+use_preset_vocabulary: false
+columns:
+  - text
+  - code
+...
+
+守得云开见月明	shou de yun kai jian ming yue
+静待花开终有时	jing dai hua kai zhong you shi
+守得云开见月明，静待花开终有时	shou de yun kai jian ming yue
+伄图	diao tu
+TeX	tex
+LaTeX	latex
+.c	c
+.cpp	cpp
+.doc	doc
+.docx	docx
+.md	md
+.yaml	yaml
+.zip	zip
+Android	android
+Audacity	audacity
+bilibili	bili
+Blender	bl
+blender	bl
+Blender	blender
+c	c
+C	c
+c++	c
+C++	c
+cmake	cmake
+cpp	cpp
+CPP	cpp
+Deepin	deepin
+deepin	deepin
+DNA	dna
+doc	doc
+docx	docx
+DVD	dvd
+ffmpeg	ff
+FFmpeg	ff
+FFmpeg	ffmpeg
+ffmpeg	ffmpeg
+FIX	fix
+FIXME	fix
+FIXME	fix me
+FIXME	fixme
+Gimp	gimp
+gimp	gimp
+GitHub	git
+Github	git
+github	git
+GitHub	github
+Github	github
+github	github
+Google	google
+hexo	hexo
+iOS	ios
+iPad	ipad
+iPhone	iphone
+iPod	ipod
+JavaScript	java
+Javascript	java
+javascript	java
+JavaScript	javascript
+Javascript	javascript
+javascript	javascript
+JavaScript	js
+Javascript	js
+javascript	js
+Kali	kali
+kali	kali
+Krita	krita
+krita	krita
+Linux	linux
+Manjaro	manjaro
+manjaro	manjaro
+md	md
+OK	ok
+PDF	pdf
+QQ	qq
+R.I.P	rip
+Rime	rime
+Rime	zhongzhouyun
+TO	to
+To	to
+TODO	to
+TODO	to do
+TODO	todo
+WiFi	waifai
+WiFi	wifi
+yaml	yaml
+zip	zip
+Type-C	tpc
+Type-C	type
+Type-C	typec
+type-c	tpc
+type-c	type
+type-c	typec
