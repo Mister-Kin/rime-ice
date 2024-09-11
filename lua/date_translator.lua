@@ -25,9 +25,10 @@ function M.func(input, seg, env)
         local current_time = os.time()
         yield_cand(seg, os.date('%Y-%m-%d', current_time))
         yield_cand(seg, os.date('%Y/%m/%d', current_time))
-        yield_cand(seg, os.date('%Y.%m.%d', current_time))
-        yield_cand(seg, os.date('%Y%m%d', current_time))
         yield_cand(seg, os.date('%Y年%m月%d日', current_time):gsub('年0', '年'):gsub('月0','月'))
+        yield_cand(seg, os.date('%Y.%m.%d', current_time))
+        yield_cand(seg, os.date('%Y_%m_%d', current_time))
+        yield_cand(seg, os.date('%Y%m%d', current_time))
 
     -- 时间
     elseif (input == M.time) then
@@ -40,15 +41,19 @@ function M.func(input, seg, env)
         local current_time = os.time()
         local week_tab = {'日', '一', '二', '三', '四', '五', '六'}
         local text = week_tab[tonumber(os.date('%w', current_time) + 1)]
+        local yaori_tab = {'日', '月', '火', '水', '木', '金', '土'}
+        local yaori_text = yaori_tab[tonumber(os.date('%w', current_time) + 1)]
         yield_cand(seg, '星期' .. text)
         yield_cand(seg, '礼拜' .. text)
         yield_cand(seg, '周' .. text)
+        yield_cand(seg, yaori_text .. '曜日')
 
     -- ISO 8601/RFC 3339 的时间格式 （固定东八区）（示例 2022-01-07T20:42:51+08:00）
     elseif (input == M.datetime) then
         local current_time = os.time()
         yield_cand(seg, os.date('%Y-%m-%dT%H:%M:%S+08:00', current_time))
         yield_cand(seg, os.date('%Y-%m-%d %H:%M:%S', current_time))
+        yield_cand(seg, os.date('%Y_%m_%d_%H_%M_%S', current_time))
         yield_cand(seg, os.date('%Y%m%d%H%M%S', current_time))
 
     -- 时间戳（十位数，到秒，示例 1650861664）

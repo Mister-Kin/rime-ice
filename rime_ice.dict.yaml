@@ -15,6 +15,75 @@ import_tables:
   # 建议把扩展词库放到下面，有重复词条时，最上面的权重生效
   # - mydict1           # 挂载配置目录下的 mydict1.dict.yaml 词库文件
   # - cn_dicts/mydict2  # 挂载 cn_dicts 目录里的 mydict2.dict.yaml 词库文件
+  - cn_dicts/cn_en # 导入自定义词库
+  - cn_dicts/personal_words # 导入自定义词库
+  - cn_dicts/THUOCL/THUOCL_animal # 导入 11 个清华大学开放词库
+  - cn_dicts/THUOCL/THUOCL_caijing
+  - cn_dicts/THUOCL/THUOCL_car
+  - cn_dicts/THUOCL/THUOCL_chengyu
+  - cn_dicts/THUOCL/THUOCL_diming
+  - cn_dicts/THUOCL/THUOCL_food
+  - cn_dicts/THUOCL/THUOCL_IT
+  - cn_dicts/THUOCL/THUOCL_law
+  - cn_dicts/THUOCL/THUOCL_lishimingren
+  - cn_dicts/THUOCL/THUOCL_medical
+  - cn_dicts/THUOCL/THUOCL_poem
+  - cn_dicts/sogou/sogou_3D # 导入 56 个搜狗细胞词库
+  - cn_dicts/sogou/sogou_147_fruits_name
+  - cn_dicts/sogou/sogou_agriculture
+  - cn_dicts/sogou/sogou_animal
+  - cn_dicts/sogou/sogou_architecture
+  - cn_dicts/sogou/sogou_astronomy
+  - cn_dicts/sogou/sogou_biology
+  - cn_dicts/sogou/sogou_calligraphy
+  - cn_dicts/sogou/sogou_car
+  - cn_dicts/sogou/sogou_chemistry
+  - cn_dicts/sogou/sogou_chess
+  - cn_dicts/sogou/sogou_color_name
+  - cn_dicts/sogou/sogou_computer
+  - cn_dicts/sogou/sogou_diet
+  - cn_dicts/sogou/sogou_drug_name
+  - cn_dicts/sogou/sogou_edaphology
+  - cn_dicts/sogou/sogou_electricity
+  - cn_dicts/sogou/sogou_electron
+  - cn_dicts/sogou/sogou_famous_ancient_poetry
+  - cn_dicts/sogou/sogou_finance
+  - cn_dicts/sogou/sogou_fitment
+  - cn_dicts/sogou/sogou_four_characters_idiom
+  - cn_dicts/sogou/sogou_geography
+  - cn_dicts/sogou/sogou_governmental_apparatus
+  - cn_dicts/sogou/sogou_hacker
+  - cn_dicts/sogou/sogou_human_acupoint_name
+  - cn_dicts/sogou/sogou_human_anatomy
+  - cn_dicts/sogou/sogou_idiom_adage
+  - cn_dicts/sogou/sogou_IT_computer
+  - cn_dicts/sogou/sogou_IT
+  - cn_dicts/sogou/sogou_Japanese_animation
+  - cn_dicts/sogou/sogou_law
+  - cn_dicts/sogou/sogou_lunyu
+  - cn_dicts/sogou/sogou_maths
+  - cn_dicts/sogou/sogou_matlab
+  - cn_dicts/sogou/sogou_medical_apparatus
+  - cn_dicts/sogou/sogou_medical_science
+  - cn_dicts/sogou/sogou_movie_name
+  - cn_dicts/sogou/sogou_network_buzzword
+  - cn_dicts/sogou/sogou_painting_art
+  - cn_dicts/sogou/sogou_phychology
+  - cn_dicts/sogou/sogou_physics
+  - cn_dicts/sogou/sogou_plants
+  - cn_dicts/sogou/sogou_scenery
+  - cn_dicts/sogou/sogou_seo_term
+  - cn_dicts/sogou/sogou_singer_name
+  - cn_dicts/sogou/sogou_software_development
+  - cn_dicts/sogou/sogou_software_major
+  - cn_dicts/sogou/sogou_song_dynasty_poem
+  - cn_dicts/sogou/sogou_tai_chi
+  - cn_dicts/sogou/sogou_three_characters_idiom
+  - cn_dicts/sogou/sogou_tour
+  - cn_dicts/sogou/sogou_traditional_Chinese_medicine
+  - cn_dicts/sogou/sogou_tree_name
+  - cn_dicts/sogou/sogou_university_name
+  - cn_dicts/sogou/sogou_weather
 ...
 
 # 按需启用：
