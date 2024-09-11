@@ -1,0 +1,21 @@
+#
+# Author: Mr. Kin <im.misterkin@gmail.com>
+# Description: This file is used for rime_ice schema's customized setting —— personal symbols
+#
+
+symbols:
+#符号、电脑
+  'vywz': [🌿,(ಡωಡ), (ಥ﹏ಥ), (ง •_•)ง, (눈_눈), (＞﹏＜), ╥﹏╥..., (lll￢ω￢), (๑•̀ㅂ•́)و✧, (￣▽￣)～■干杯□～(￣▽￣)]
+  'vhexo': [hexo generate && hexo server --draft, hexo clean && hexo generate && hexo server --draft, hexo new draft, hexo publish, hexo new post, hexo new page, hexo generate && hexo server, hexo clean --silent && hexo generate --silent && hexo server --draft, hexo clean --silent && hexo generate --silent && hexo server, hexo clean, hexo generate, hexo server, hexo server --draft]
+  'vmlh': [cd D:/git/BatchTools/ && ./ffmpeg.sh, cd D:/git/BatchTools/ && ./text.sh, auto-changelog --commit-limit false --unreleased-only --template D:/git/changelog_template.hbs -o D:/git/changelog.md, ipconfig /flushdns,sfc /scannow, dism /online /cleanup-image /scanhealth, dism /online /cleanup-image /restorehealth, 'rundll32.exe powrprof.dll,SetSuspendState']
+  'vurl': [https://github.com, https://github.com/Mister-Kin/, https://mister-kin.github.io/]
+  'vipabpy': [p, b, t, d, k, g] # 爆破音
+  'vipamcy': [f, v, s, z, f, ʒ, θ, ð, h] # 摩擦音
+  'vipaby': [m, n, ŋ] # 鼻音
+  'vipafy': [tʃ, dʒ, l, r, j, w, x] # 其他辅音
+  'vipadyy': [ɪ, ʊ, ɒ, ʌ, ə, e] # 单元音
+  'vipacyy': [iː, uː, ɔː, ɑː, ɜː, æ] # 长元音
+  'vipasyy': [eɪ, aɪ, ɔɪ, aʊ, əʊ, ɪə, ʊə, eə, eɪə, aɪə, ɔɪə, aʊə, əʊə] # 双元音
+  'vipafh': [ˈ, ˌ, ː, .] # 声调符号
+  'vipa': [ɪ, ʊ, ɒ, ʌ, ə, ʒ, θ, ð, ŋ, ʃ, iː, uː, ɔː, ɑː, ɜː, æ, eɪ, aɪ, ɔɪ, aʊ, əʊ, ɪə, ʊə, eə, eɪə, aɪə, ɔɪə, aʊə, əʊə] # 合并项，方便输入
+  'vname': [Mr. Kin, Mr. Kin <im.misterkin@gmail.com>, MisterKin, Kin]
