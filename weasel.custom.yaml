@@ -14,6 +14,7 @@ patch:
   style/comment_font_point: 30 # 注解文字大小
   style/inline_preedit: false # 內嵌編碼（僅支持TSF），预选栏直接嵌入到输入光标位置处，即所敲所见所得。
   # style/preedit_type: composition # 默认就是composition，"composition" | "preview" | "preview_all"
+  style/candidate_abbreviate_length: 0 # 候选项略写，超过此数字则用省略号代替。设置为 0 则不启用此功能
   style/layout/hilite_spacing: 15 # 序号和候选文字之间的间隔
   style/layout/max_width: 2000 # 超出限定宽度后折行
   style/layout/align_type: top # 超出限定宽度后折行的序号对齐方式——置顶
