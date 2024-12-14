@@ -122,12 +122,14 @@ if "%errorlevel%" EQU "0" (
     call :copy_failed_text "「所有yaml」文件"
 )
 
-xcopy /y .\rime.lua "%AppData%\Rime\">nul
-if "%errorlevel%" EQU "0" (
-    call :copy_success_text "「rime.lua」文件"
-) else (
-    call :copy_failed_text "「rime.lua」文件"
-)
+@REM Lua 模块引用方式变更，参考下面commit（删除了 `rime.lua`）
+@REM https://github.com/Mister-Kin/rime-ice/commit/aa505b7b2d5123a1fdef9951dea605a7cbb0d081
+@REM xcopy /y .\rime.lua "%AppData%\Rime\">nul
+@REM if "%errorlevel%" EQU "0" (
+@REM     call :copy_success_text "「rime.lua」文件"
+@REM ) else (
+@REM     call :copy_failed_text "「rime.lua」文件"
+@REM )
 
 xcopy /y .\custom_phrase.txt "%AppData%\Rime\">nul
 if "%errorlevel%" EQU "0" (
