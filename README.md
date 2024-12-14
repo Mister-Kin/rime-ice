@@ -1,5 +1,7 @@
 # 雾凇拼音
 
+[GPL-3.0-only](https://spdx.org/licenses/GPL-3.0-only.html)
+
 ![demo](./others/demo.webp)
 
 功能齐全，词库体验良好，长期更新修订。
@@ -40,7 +42,7 @@
     -   所有标点符号直接上屏
     -   特殊符号、字符输入（全拼<kbd>v</kbd>+首字母缩写；双拼<kbd>V</kbd>+首字母缩写）
     -   拼音纠错（模糊音）
-    -   更多默认未启用的功能请参考 `rime.lua` 文件以及方案注释
+    -   更多默认未启用的功能请参考 `lua/` 及方案注释
 - 简体字表、词库
     -   [通用规范汉字表](https://github.com/iDvel/The-Table-of-General-Standard-Chinese-Characters)（by 中华人民共和国教育部）8K 常用汉字
     -   [Unihan 字库](https://www.unicode.org/Public/)（by Unicode lnc | [UNICODE LICENSE V3](https://www.unicode.org/license.txt)）40K 大字库， **默认未启用**
@@ -82,17 +84,50 @@
 
 ## 使用说明
 
-⚠️ 单独使用词库注意事项：`rime_ice.dict.yaml` 下面包含了大写字母，这和配置有些许绑定，可以直接删除，详细说明：[#356](https://github.com/iDvel/rime-ice/issues/356)
+### 选择和安装 RIME 前端
 
-雾凇拼音中多个文件可能与其他方案同名冲突，如果是新手想一键安装，建议备份原先配置，清空配置目录再导入。
+要使用雾凇拼音默认提供的所有功能，请保证
+- 您的 RIME 前端提供的 librime 版本 ≥ 1.8.5 且
+- 含有 librime-lua 依赖
 
-配置目录为小狼毫的 `%APPDATA%\Rime`，鼠须管的 `~/Library/Rime`，可通过右键菜单栏图标打开。
+以下是主流平台上的一些 RIME 前端安装建议。部分信息具有时效性，请以当下具体情况为准：
+
+| 系统    | RIME 前端                                                    | 雾凇拼音版本要求                  | 备注                                                         |
+| ------- | ------------------------------------------------------------ | --------------------------------- | ------------------------------------------------------------ |
+| Android | [fcitx5-android](https://github.com/fcitx5-android/fcitx5-android/releases) + plugin.rime（小企鹅输入法） | ≥ 0.0.8                           | 暂不支持九宫格                                               |
+| Android | [Trime](https://github.com/osfans/trime)（同文输入法）       | ≥ 3.2.11                          |                                                              |
+| iOS     | [Hamster](https://apps.apple.com/cn/app/%E4%BB%93%E8%BE%93%E5%85%A5%E6%B3%95/id6446617683)（仓输入法） | N/A                               | 闭源；有内购                                                 |
+| Linux   | ibus + [ibus-rime](https://github.com/rime/ibus-rime)        | librime ≥ 1.8.5 且装有 librime-lua | 部分发行版需手动安装 librime-lua                             |
+| Linux   | fcitx5 + [fcitx5-rime](https://github.com/rime/ibus-rime)    | librime ≥ 1.8.5 且装有 librime-lua | 部分发行版需手动安装 librime-lua                             |
+| macOS   | [Squirrel](https://github.com/rime/squirrel)（鼠须管）       | ≥ 1.0.0                           | 0.16.0 - 0.18.0 版本请参考[🔗](https://github.com/iDvel/rime-ice/issues/1062) |
+| macOS   | [fcitx5-macos](https://github.com/fcitx-contrib/fcitx5-macos) | N/A                               | 支持[卷轴模式](https://github.com/iDvel/rime-ice/issues/941) |
+| Windows | [Weasel](https://github.com/rime/weasel)（小狼毫）           | ≥ 0.15.0                            | 0.14.3 可手动更新 [rime.dll](https://github.com/iDvel/rime-ice/issues/197)（但不支持彩色 emoji）<br />Weasel 当下有兼容性问题，建议安装其他输入法备用 |
+
+Linux 依赖问题的具体解释请参考 [#840](https://github.com/iDvel/rime-ice/issues/840)。
+
+雾凇拼音的部分配置可能要求更高的 librime 或者客户端版本，这些功能已在具体配置文件中注明。
+
+以下安装方式，选择其一：
+
+- [手动安装](#使用说明)
+- [Git 安装](#git-安装)
+- [东风破 plum](#东风破-plum)
+- [自动部署脚本](#自动部署脚本)
+- [仓输入法](#仓输入法-hamster)
+- [Arch Linux](#arch-linux)（AUR）
 
 ### 手动安装
 
-您可以将仓库打包下载，或者整体 clone 后，将所有文件复制粘贴到配置目录，重新部署。
+您可以将仓库打包下载，将所有文件复制粘贴到 RIME 前端的配置目录，重新部署。
 
-更新词库，手动覆盖 `cn_dicts` `en_dicts` `opencc` 三个文件夹。
+只需要使用或者更新词库的话，可以手动粘贴覆盖 `cn_dicts` `en_dicts` `opencc` 三个文件夹。
+
+> [!NOTE]
+> 雾凇拼音中多个文件可能与其他方案同名冲突，如果是新手想一键安装，建议备份原先配置，**清空配置目录**再导入。
+
+> [!NOTE]
+>
+> 单独使用词库注意事项：`rime_ice.dict.yaml` 下面包含了大写字母，这和配置有些许绑定，可以直接删除，详细说明：[#356](https://github.com/iDvel/rime-ice/issues/356)
 
 您也可以前往 [Release](https://github.com/iDvel/rime-ice/releases) 界面，下载特定版本的词典文件（具体描述见 Release 说明），覆盖配置目录的对应文件。
 
@@ -107,6 +142,8 @@ git clone https://github.com/iDvel/rime-ice.git Rime --depth 1
 cd Rime
 git pull
 ```
+
+通过 checkout 命令，您也可以实现更新部分文件的效果。
 
 ### 东风破 [plum](https://github.com/rime/plum)
 
@@ -138,7 +175,15 @@ cd ~/plum
 bash rime-install iDvel/rime-ice:others/recipes/full
 ```
 
+指定 RIME 前端为 fcitx5-rime
+
+```bash
+cd ~/plum
+rime_frontend=fcitx5-rime bash rime-install iDvel/rime-ice:others/recipes/full
+```
+
 使用 plum 更新「雾凇拼音」的词库文件
+
 ```sh
 cd ~/plum
 bash rime-install iDvel/rime-ice:others/recipes/all_dicts
@@ -202,7 +247,7 @@ bash rime-install iDvel/rime-ice@2024.05.21:others/recipes/full
 
 ### 仓输入法 [Hamster](https://github.com/imfuxiao/Hamster)
 
-参考 [如何导入"雾淞拼音输入方案"](https://github.com/imfuxiao/Hamster/wiki/%E5%A6%82%E4%BD%95%E5%AF%BC%E5%85%A5%22%E9%9B%BE%E6%B7%9E%E6%8B%BC%E9%9F%B3%E8%BE%93%E5%85%A5%E6%96%B9%E6%A1%88%22)
+参考 [如何导入"雾凇拼音输入方案"](https://github.com/imfuxiao/Hamster/wiki/%E5%A6%82%E4%BD%95%E5%AF%BC%E5%85%A5%22%E9%9B%BE%E6%B7%9E%E6%8B%BC%E9%9F%B3%E8%BE%93%E5%85%A5%E6%96%B9%E6%A1%88%22)
 
 仓输入法目前已内置雾凇拼音，也可以通过【输入方案设置 - 右上角加号 - 方案下载 - 覆盖并部署】来更新雾凇拼音。
 
