@@ -5,3 +5,11 @@
 
 patch:
   menu/page_size: 9 # 设置候选词个数
+  ascii_composer:
+    good_old_caps_lock: true
+    switch_key:
+      Caps_Lock: clear
+      Shift_L: commit_code
+      Shift_R: commit_text
+      Control_L: noop
+      Control_R: noop
